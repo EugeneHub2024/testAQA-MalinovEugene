@@ -25,14 +25,14 @@ public class Main {
 
       Cat[] cats = {cat1, cat2};
 
-      Bowl bowl = new Bowl(40);
+      Bowl bowl = new Bowl();
 
       System.out.println();
       System.out.println("Еды в миске до кормления: " + bowl.getFoodAmount() + " единиц еды");
       System.out.println();
 
       for (Cat cat : cats) {
-        cat.eat(bowl);
+        cat.eat(bowl, 15);
       }
 
       System.out.println();

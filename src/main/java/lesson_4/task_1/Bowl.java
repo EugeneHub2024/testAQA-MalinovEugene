@@ -3,12 +3,8 @@ package lesson_4.task_1;
 public class Bowl {
     protected int foodAmount;
 
-    public Bowl(int initialFood) {
-        if (initialFood < 0) {
-            this.foodAmount = 0;
-        } else {
-            this.foodAmount = initialFood;
-        }
+    public Bowl() {
+        this.foodAmount = 0;
     }
 
     public int getFoodAmount() {

@@ -12,7 +12,10 @@ public class Cat extends Animal{
         return satiety;
     }
 
-    public void eat(Bowl bowl) {
+    public void eat(Bowl bowl, int amount) {
+        if (bowl.getFoodAmount() == 0) {
+            bowl.addFood(amount);
+        }
         if (satiety == true) {
             System.out.println(view + " " + name + " уже сыт и отказывается от еды");
             return;
@@ -23,6 +26,10 @@ public class Cat extends Animal{
             System.out.println(view + " " + name + " успешно покушал");
         } else {
             System.out.println(view + " " + name + " не стал кушать, так как в миске недостаточно еды");
+            bowl.addFood(amount);
+            bowl.decreaseFood(20);
+            satiety = true;
+            System.out.println(view + " " + name + " успешно покушал");
         }
     }
 }
