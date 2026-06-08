@@ -11,6 +11,7 @@ import java.time.Duration;
 
 public class BaseTest {
     protected WebDriver driver;
+    protected WebElement getFormPay;
 
     @BeforeEach
     public void setUp() {
@@ -21,6 +22,8 @@ public class BaseTest {
 
         WebElement cookieButton = driver.findElement(By.id("cookie-agree"));
         cookieButton.click();
+
+        getFormPay = driver.findElement(By.cssSelector(".pay .pay__wrapper"));
     }
 
     @AfterEach
